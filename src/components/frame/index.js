@@ -6,7 +6,9 @@ import { Layout, Menu, Breadcrumb, Icon } from "antd";
 // import  { adminRouter } from '../../routes'
 // import Logo from "./Logo.png";
 import "./frame.less";
-
+/*
+  使用antd制作的路由菜单
+ */
 const { SubMenu } = Menu;
 const { Header, Content, Sider } = Layout;
 @withRouter
