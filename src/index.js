@@ -4,7 +4,7 @@ import { HashRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
 
 
 import App from './App' 
-
+import './index.less'
 import { mainRouter  } from './routes/index'
 
 render(

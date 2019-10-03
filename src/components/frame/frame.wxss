@@ -1,0 +1,9 @@
+.qf-header {
+  border-bottom: 1px #666 solid;
+}
+.qf-header .qf-logo {
+  height: 100%;
+}
+.qf-header .qf-logo img {
+  max-height: 90%;
+}
