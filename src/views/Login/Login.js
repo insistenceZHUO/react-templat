@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 import { Form, Icon, Input, Button, Checkbox, Card } from 'antd';
+import axios from 'axios'
+
+import { connect } from 'react-redux'
 
 import './Login.less'
 const wrapperCol = {
@@ -12,7 +15,7 @@ const wrapperCol = {
     }
 }
 @Form.create()
-
+@connect()
 class Login extends Component {
     handleSubmit = e => {
         e.preventDefault();
@@ -22,8 +25,19 @@ class Login extends Component {
           }
         });
       };
-    
+      componentDidMount () {
+        axios({
+          method: 'post',
+          url: 'http://rap2api.taobao.org/app/mock/232745//mock',
+          data: {
+            pageNo: 1,
+          }
+        }).then(res => {
+          console.log(res)
+        });
+      }
       render() {
+        console.log(this.props)
         const { getFieldDecorator } = this.props.form;
         return (
             <Card title="登陆"  className="qf-login-wrapper">

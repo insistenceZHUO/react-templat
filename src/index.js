@@ -7,21 +7,23 @@ import store from './store'
 import App from './App' 
 import './index.less'
 import { mainRouter  } from './routes/index'
+console.log(store)
 
 render(
     <Provider store={store}>
-    <Router>
-        <Switch>
-        <Route path="/admin" render = { (routerProps) => {
-                return store.users.isLogin ? <App { ...routerProps }/> : <Redirect to='/login'></Redirect>    
-            }}/>
-            {
-                mainRouter.map(route => {
-                    return (
-                            <Route key={route.pathname} path={route.pathname} component={route.component} />
-                        )
-                })
-            }
+        <Router>
+            <Switch>
+                <Route path="/admin" render = { (routerProps) => {
+                       {/*  return store.getState().user.isLogin ? <App { ...routerProps }/>: <Redirect to='/login'/>*/}
+                       return <App { ...routerProps } />
+                    }}/>
+                    {
+                        mainRouter.map(route => {
+                            return (
+                                    <Route key={route.pathname} path={route.pathname} component={route.component} />
+                                )
+                        })
+                    }
             <Redirect to="/admin" from="/" exact></Redirect>
             <Redirect to="/404"></Redirect>
         </Switch>

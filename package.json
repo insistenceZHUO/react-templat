@@ -27,6 +27,7 @@
   "eslintConfig": {
     "extends": "react-app"
   },
+  "proxy": "http://rap2.taobao.org",
   "browserslist": {
     "production": [
       ">0.2%",

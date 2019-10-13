@@ -1,7 +1,9 @@
 import { combineReducers } from 'redux'
 
-import users from './login'
+import user from './login'
+import notifications from './notifications'
 
 export default combineReducers({
-    users
+    user,
+    notifications
 })
